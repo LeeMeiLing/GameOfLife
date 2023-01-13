@@ -53,19 +53,27 @@ public class Grid {
         return startY;
     }
 
-    // set grid
-    public void setGrid(int row,char[] data) {
+    // initialize grid
+    public void initializeGrid(int row,char[] data) {
 
-        System.out.printf("dataRow is %d\n",row); // testing
-        System.out.printf("row + startY is %d\n",row + startY); // testing
-
+        // System.out.printf("dataRow is %d\n",row); // testing
+        // System.out.printf("row + startY is %d\n",row + startY); // testing
 
         for (int i=0; i < data.length; i++) {
             this.grid[row + startY][i + startX] = data[i];
-            System.out.printf("now setting array row [%d] col [%d] with %c\n", row + startY, i + startX,data[i]); //testing
+            // System.out.printf("now setting array row [%d] col [%d] with %c\n", row + startY, i + startX,data[i]); //testing
         }
 
     }
+
+    // set Grid
+    public void setGrid(int y, int x, char value) {
+
+        // System.out.printf("setting grid[%d][%d] as value[%c]\n",y,x,value); // testing
+        this.grid[y][x] = value;     
+    }
+
+
 
     // print grid status
     public void printGrid() {
@@ -73,9 +81,9 @@ public class Grid {
         for (int i = 0; i < gridHeight; i++) {
 
             System.out.println(Arrays.toString(grid[i]));
-            //System.out.printf("2D array size is %d\n",grid.length); // testing 2D array size
 
         }
+        System.out.print('\n');
 
     }
 
